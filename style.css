@@ -22,7 +22,7 @@ html {
     border-radius: 50%;
     margin: 50px auto;
     position: relative;
-    padding: 2rem;
+    padding: 5rem;
     box-shadow:
       0 0 0 4px rgba(0,0,0,0.1),
       inset 0 0 0 3px #77df77,
@@ -39,10 +39,12 @@ html {
 
   .hand {
     width: 50%;
-    height: 6px;
+    height: 10px;
     background: black;
     position: absolute;
     top: 50%;
-    transform-origin: 100%; /* ACCOUNT FOR THE POINT THE CLOCK HAND ROTATES FROM  */
-    
+    transform-origin: 100%; /* ACCOUNT FOR THE POINT THE CLOCK HAND ROTATES FROM CENTER  */
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
   }

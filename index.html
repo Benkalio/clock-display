@@ -17,7 +17,28 @@
     </div>
 
     <script>
+        const secondHand = document.querySelector('.second-hand');
+        const minuteHand = document.querySelector('.min-hand');
+        const hourHand = document.querySelector('.hour-hand');
 
+        function setDate() {
+            const now = new Date();
+            const seconds = now.getSeconds();
+            const minutes = now.getMinutes();
+
+            //TURNING THE TIME TO BE BASE 100 TO USE THE 360 DEGREES SO THE CLOCK HAND MOVES ALONG WITH THE SECOND
+            const secondsDegrees = ((seconds / 60) * 360) + 90; 
+            secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+            // FOR THE MINUTES HAND
+            const minutesDegrees = ((minutes / 60) * 360) + 90;
+            minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+            console.log(minutes)
+        }
+
+        
+
+        setInterval(setDate, 1000)
     </script>
 </body>
 </html>
